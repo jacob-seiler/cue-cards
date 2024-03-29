@@ -59,15 +59,17 @@ const App = () => {
       {!decks ? (
         <p>You don&apos;t have any decks!</p>
       ) : (
-        decks.map((deck) => (
-          <div
-            key={deck.id}
-            className="w-60 h-32"
-            style={{ backgroundColor: deck.colour }}
-          >
-            <p>{deck.title}</p>
-          </div>
-        ))
+        <div className="flex flex-wrap">
+          {decks.map((deck) => (
+            <div
+              key={deck.id}
+              className="m-3 h-32 w-60 rounded-md p-3"
+              style={{ backgroundColor: deck.colour }}
+            >
+              <p>{deck.title}</p>
+            </div>
+          ))}
+        </div>
       )}
       <button onClick={handleAdd}>Add Deck</button>
     </main>
